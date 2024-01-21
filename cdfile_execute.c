@@ -1,30 +1,32 @@
 #include "monty.h"
+
 /**
-* execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
-* @file: poiner to monty file
+* execute - execute opcode
+* @stack: stack of linked list
+* @counter: line counter
+* @file: pointer to monty file stream
 * @content: line content
-* Return: no return
+*
+* Return: none
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"file_push", fun_push}, {"pall", fun_pall}, {"pint", fun_pint},
-				{"file_pop", fun_pop},
-				{"file_swap", fun_swap},
-				{"file_add", fun_add},
-				{"file_nop", fun_nop},
-				{"file_sub", fun_sub},
-				{"file_div", fun_div},
-				{"file_mul", fun_mul},
-				{"file_mod", fun_mod},
-				{"file_pchar", fun_pchar},
-				{"file_pstr", fun_pstr},
-				{"file_rotl", fun_rotl},
-				{"file_rotr", fun_rotr},
-				{"file_queue", fun_queue},
-				{"file_stack", fun_stack},
+				{"push", f_mypush}, {"pall", f_mypall}, {"pint", f_mypint},
+				{"pop", f_mypop},
+				{"swap", f_myswap},
+				{"add", f_myadd},
+				{"nop", f_mynop},
+				{"sub", f_mysub},
+				{"div", f_mydiv},
+				{"mul", f_mymul},
+				{"mod", f_mymod},
+				{"pchar", f_mypchar},
+				{"pstr", f_mypstr},
+				{"rotl", f_myrotl},
+				{"rotr", f_myrotr},
+				{"queue", f_myqueue},
+				{"stack", f_mystack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
