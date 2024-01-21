@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * cdfun_queue - prints the top
+ * fun_queue - prints the top
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void cdfun_queue(stack_t **head, unsigned int counter)
+void fun_queue(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
@@ -46,3 +46,4 @@ void addqueue(stack_t **head, int n)
 		new_node->prev = aux;
 	}
 }
+

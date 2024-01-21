@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * cdfun_stack - prints the top
+ * fun_stack - prints the top
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void cdfun_stack(stack_t **head, unsigned int counter)
+void fun_stack(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;

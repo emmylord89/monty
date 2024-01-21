@@ -10,21 +10,21 @@
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"cdfile_push", cdfun_push}, {"pall", cdfun_pall}, {"pint", cdfun_pint},
-				{"cdfile_pop", cdfun_pop},
-				{"cdfile_swap", cdfun_swap},
-				{"cdfile_add", cdfun_add},
-				{"cdfile_nop", cdfun_nop},
-				{"cdfile_sub", cdfun_sub},
-				{"cdfile_div", cdfun_div},
-				{"cdfile_mul", cdfun_mul},
-				{"cdfile_mod", cdfun_mod},
-				{"cdfile_pchar", cdfun_pchar},
-				{"cdfile_pstr", cdfun_pstr},
-				{"cdfile_rotl", cdfun_rotl},
-				{"cdfile_rotr", cdfun_rotr},
-				{"cdfile_queue", cdfun_queue},
-				{"cdfile_stack", cdfun_stack},
+				{"file_push", fun_push}, {"pall", fun_pall}, {"pint", fun_pint},
+				{"file_pop", fun_pop},
+				{"file_swap", fun_swap},
+				{"file_add", fun_add},
+				{"file_nop", fun_nop},
+				{"file_sub", fun_sub},
+				{"file_div", fun_div},
+				{"file_mul", fun_mul},
+				{"file_mod", fun_mod},
+				{"file_pchar", fun_pchar},
+				{"file_pstr", fun_pstr},
+				{"file_rotl", fun_rotl},
+				{"file_rotr", fun_rotr},
+				{"file_queue", fun_queue},
+				{"file_stack", fun_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -46,7 +46,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		cdfree_stack(*stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
